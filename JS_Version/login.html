@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tom's Project for Ctrl+Shift - CodedByKids">
+    <meta name="author" content="Tom Xaviour">
+    <title>Black Box</title>
+   <!-- <link rel="icon" type="image/png" href="assets/images/favicon.png">-->
+
+    <!-- START: Styles -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,700%7cMarcellus+SC" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- CSS -->
+	<link rel="stylesheet" href="assets/css/default.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- END: Styles -->
+
+    <!-- jQuery -->
+    <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+    <!-- START: Page Border -->
+    <div class="page-border">
+        <div class="page-border-t"></div>
+        <div class="page-border-r"></div>
+        <div class="page-border-b"></div>
+        <div class="page-border-l"></div>
+    </div>
+    <!-- END: Page Border -->
+
+    <header class="header header-opaque">
+        <!--    START: Navbar    -->
+        <nav class="navbar navbar-top navbar-sticky navbar-transparent navbar-autohide">
+            <div class="container">
+                <div class="nav-table">
+
+                    <a href="index.html" class="nav-logo">
+                        <img src="assets/images/logo.png" alt="" width="90">
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <!-- END: Navbar -->
+
+    </header>
+
+    <div class="main">
+		
+        <!-- START: Header Title -->
+        <div class="header-title header-title-lg header-title-parallax-opacity">
+            <div class="bg-image">
+                <div style="background-image: url('assets/images/image-1.jpg');"></div>
+            </div>
+            <div class="header-table">
+                <div class="header-table-cell">
+                    <div class="container">
+                       <h1 class="title">My Account</h1>
+
+                            <div class="gap-2"></div>
+                            
+                            <a href="#aboutt" class="btn btn-lg lieffect-4">
+                                <span>Go To My Account</span>
+                            </a>
+							
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="index.html" class="btn btn-lg lieffect-4">
+                                <span>Home</span>
+                            </a>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- END: Header Title -->
+		
+		<!-- START: Contact Form -->
+        <div class="gap-4" id="aboutt"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="box-3 bg-dark-1">
+                        <h2 class="title h3 text-xs-center">Login</h2>
+                        <div class="gap-2"></div>
+                        <form action="" class="form form-ajax form-style-1" method="post">
+                            <input type="text" class="form-control required" name="username" placeholder="Username *" required>
+                            <div class="gap-1"></div>
+                            <input type="password" class="form-control required" name="password" placeholder="Password *" required>
+                            <div class="gap-1"></div>
+                            <div class="form-response-success"></div>
+                            <div class="form-response-error"></div>
+                            <button class="btn btn-lg lieffect-4" onclick="login()">Login</button>
+							<br><a href="#aboutt" data-toggle="tooltip" title="Can't Do It In JS Version">Sign up...</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#aboutt" data-toggle="tooltip" title="Can't Do It In JS Version">Forgot Password?</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gap-4"></div>
+		<div class="gap-4"></div>
+        <!-- END: Contact Form -->
+<!-- START: Footer -->
+       <footer class="footer footer-parallax footer-parallax-opacity">
+            <img class="footer-top-corner" src="assets/images/footer-corner.png" alt="">
+
+
+
+            <div class="container">
+                <p>
+                    &copy; 2019 Black Box Inc. &reg;  </p>
+
+                <div class="footer-links"><a href="privacy.html" class="lieffect">Privacy Policy</a>
+                </div>
+
+                <div class="gap-4"></div>
+            </div>
+        </footer>
+        <!-- END: Footer -->
+
+
+    </div>
+  
+    <!-- START: Scripts -->
+
+    <!-- Bootstrap -->
+    <script src="assets/bower_components/tether/dist/js/tether.min.js"></script>
+    <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Sticky Kit -->
+    <script src="assets/bower_components/sticky-kit/dist/sticky-kit.min.js"></script>
+
+    <!-- Jquery Form -->
+    <script src="assets/bower_components/jquery-form/jquery.form.js"></script>
+
+    <!-- Jquery Validation -->
+    <script src="assets/bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+	
+    <!-- END: Scripts -->
+	
+	<script src="db.js"></script>
+	<script src="assets/js/script.js"></script>
+	<script>
+	var lgg = accessCookie("logged");
+          if (lgg!="")
+        	location.href = "profile.html";
+			
+    function login() {
+	
+    var user = document.getElementsByName('username')[0].value; 
+    var pass = document.getElementsByName('password')[0].value; 
+    var chk=0;
+	for(var i = 0; i < users.length; i++) {
+    if(user==users[i][1] && pass==users[i][2]){
+	chk=1;
+	createCookie("logged",user,3);
+	location.href = "profile.html";
+	}
+}
+	if(chk==0){
+	window.alert("An invalid username or password was entered.");
+	location.href = "login.html#aboutt";
+	}
+
+}
+
+</script>
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>
+
+</body>
+
+</html>
