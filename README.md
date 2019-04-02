@@ -5,8 +5,11 @@ Black Box is a multi-disciplinary online library that provides the customer with
 
 # Folders & Files
 -The JS_Version folder was created accidentally. You can ignore it. It has the same files as the assets folder.
+
 -db.js contains all the data that is stored. It acts like the "backend database" of the application.
+
 -I've used multiple JS and CSS libraries to make the app look more attractive. All of them can be found in the assets/bower_components and assets/plugins folder
+
 -The default.css file in the assets/css folder is a standardized css helper library I use throughout all my projects. It has descriptive class names that I can apply anywhere in the project rather than making custom class/styles for them.
 
 # PHP Version
