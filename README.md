@@ -18,7 +18,4 @@ Black Box is a multi-disciplinary online library that provides the customer with
 -The default.css file in the assets/css folder is a standardized css helper library I use throughout all my projects. It has descriptive class names that I can apply anywhere in the project rather than making custom class/styles for them.
 
 # PHP Version
-I didn't upload the PHP version of the application because, even if you would download it and run it on your computer, the database would have to be set up on your localhost. Since I was not sure if you would do it, I didn't upload the PHP version. The JS version has most of the functionalities I intended. 
-
-
-I'll be uploading the PHP version soon, if you'd like to look at it.
+I couldn't upload the PHP version of the application since I couldn't find a platform that would let me upload the files including the database and run it. The JS version has most of the functionalities I intended, so it should be good.
