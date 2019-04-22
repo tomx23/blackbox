@@ -21,11 +21,13 @@
     <!-- CSS -->
 	<link rel="stylesheet" href="assets/css/default.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-
     <!-- END: Styles -->
 
     <!-- jQuery -->
     <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
 </head>
 
 <body>
@@ -41,13 +43,24 @@
 
     <header class="header header-opaque">
         <!--    START: Navbar    -->
-        <nav class="navbar navbar-top navbar-sticky navbar-transparent navbar-autohide">
+        <nav class="navbar navbar-top navbar-sticky navbar-transparent">
             <div class="container">
                 <div class="nav-table">
 
                     <a href="index.html" class="nav-logo">
                         <img src="assets/images/logo.png" alt="" width="90">
                     </a>
+					<ul class="nav nav-right" data-nav-mobile="#nav-mobile">
+                        <li>
+                            <a href="profile.html">Profile</a>
+                        </li>
+						<li>
+                            <a href="search.html">Search</a>
+                        </li>
+						<li>
+                            <a href="#" onclick="logout()">Logout</a>
+                        </li>
+						</ul>
                 </div>
             </div>
         </nav>
@@ -82,7 +95,10 @@
                         <div class="account-links">
                             <ul>
                                 <li><a href="profile.html">Dashboard</a></li>
-								<li class="active"><a href="books.html">View Books</a></li><li><a href="movies.html">View Movies</a></li>
+								<li><a href="search.html">Search All</a></li>
+								<li class="active"><a href="books.html">View Books</a></li>
+								<li><a href="movies.html">View Movies</a></li>
+								<li><a href="games.html">View Games</a></li>
                                 <li><a href="#" data-toggle="tooltip" title="Can't Do It In JS Version">Borrowed Items</a></li>
                                 <li><a href="#" onclick="logout()">Logout</a></li>
                             </ul>
@@ -136,7 +152,6 @@
 
     <!-- Jquery Form -->
     <script src="assets/bower_components/jquery-form/jquery.form.js"></script>
-
 	
     <!-- END: Scripts -->
 <script  src="assets/js/script.js"></script>
@@ -158,9 +173,12 @@ $(document).ready(function(){
 var url = new URL(url_string);
 var c = url.searchParams.get("id");
 c-=1;
+var urlf='"https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)+'"';
+var urlt='"https://twitter.com/intent/tweet?text=%20Check%20up%20this%20awesome%20content' + encodeURIComponent(document.title) + ':%20 ' + encodeURIComponent(document.URL)+'"';
+var urlg='"https://plus.google.com/share?url=' + encodeURIComponent(document.URL)+'"';
 
-document.getElementById("wbu").innerHTML="<u><b>"+books[c][1]+"</b></u> by <u>"+books[c][3]+"</u>";
-document.getElementById("bkimg").innerHTML="<img src='"+books[c][4]+"' />";
+document.getElementById("wbu").innerHTML="<b>"+books[c][1]+"</b> by "+books[c][3]+"";
+document.getElementById("bkimg").innerHTML="<img src='"+books[c][4]+"' /><br><a href='https://www.facebook.com/sharer/sharer.php?u=&t=' title='Share on Facebook' target'_blank' onclick='window.open("+urlf+"); return false;'><i class='fab fa-facebook-square'></i></a>&nbsp;&nbsp;&nbsp;<a  href='https://twitter.com/intent/tweet?' target='_blank' title='Tweet' onclick='window.open("+urlt+"); return false;'><i class='fab fa-twitter-square'></i></a>&nbsp;&nbsp;&nbsp;<a href='https://plus.google.com/share?url=' target='_blank' title='Share on Google+' onclick='window.open("+urlg+"); return false;'><i class='fab fa-google-plus-square'></i></a>";
 document.getElementById("bkdsc").innerHTML=""+books[c][2];
 
 });

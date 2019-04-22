@@ -15,6 +15,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,700%7cMarcellus+SC" rel="stylesheet">
 
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
 
@@ -26,8 +27,6 @@
 
     <!-- jQuery -->
     <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
-	
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 </head>
 
 <body>
@@ -95,8 +94,9 @@
                         <div class="account-links">
                             <ul>
                                 <li><a href="profile.html">Dashboard</a></li>
-								<li><a href="search.html">Search All</a></li>								<li><a href="books.html">View Books</a></li>
-								<li class="active"><a href="movies.html">View Movies</a></li>
+								<li class="active"><a href="search.html">Search All</a></li>
+								<li><a href="books.html">View Books</a></li>
+								<li><a href="movies.html">View Movies</a></li>
 								<li><a href="games.html">View Games</a></li>
                                 <li><a href="#" data-toggle="tooltip" title="Can't Do It In JS Version">Borrowed Items</a></li>
                                 <li><a href="#" onclick="logout()">Logout</a></li>
@@ -107,7 +107,7 @@
                 </div>
                 <div class="col-lg-9">
                     <div class="box-3 bg-dark-1">
-                        <h2 class="title">All Movies</h2>
+                        <h2 class="title">Search All</h2>
                         <div class="gap-1"></div>
 						<div class="table-responsive">
                             <table class="table table-bordered" id="obk">
@@ -116,7 +116,7 @@
                                         <th>#</th>
 										<th>Img</th>
                                         <th>Name</th>
-                                        <th>Year</th>
+                                        <th>Type</th>
 										<th>Description</th>
                                     </tr>
                                 </thead>
@@ -167,9 +167,9 @@
 
     <!-- Jquery Form -->
     <script src="assets/bower_components/jquery-form/jquery.form.js"></script>
+<script  src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
 	
-<script  src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <!-- END: Scripts -->
 	<script>
 	ellpsis = function(str, length, ending) {
@@ -197,11 +197,23 @@
 <script>
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip(); 
-  for(var i = 0; i < movies.length; i++) {
-	$("#bklst").append("<tr><td><a href='viewmovie.html?id="+movies[i][0]+"'>"+movies[i][0]+"</a></td><td><img src='"+movies[i][4]+"' width='75em' height='150em' /></td><td><a href='viewmovie.html?id="+movies[i][0]+"'>"+movies[i][1]+"</a></td><td>"+movies[i][3]+"</td><td>"+ellpsis(movies[i][2])+"</td></tr>");
+  var x=0;
+  for(var i = 0; i < books.length; i++) {
+  x++;
+	$("#bklst").append("<tr><td><a href='viewbook.html?id="+books[i][0]+"'>"+x+"</a></td><td><img src='"+books[i][4]+"' width='75em' height='150em' /></td><td><a href='viewbook.html?id="+books[i][0]+"'>"+books[i][1]+"</a></td><td>Book</td><td>"+ellpsis(books[i][2])+"</td></tr>");
 								}
 								
-								var table =	$('#obk').DataTable();
+		for(var i = 0; i < movies.length; i++) {
+		x++;
+	$("#bklst").append("<tr><td><a href='viewmovie.html?id="+movies[i][0]+"'>"+x+"</a></td><td><img src='"+movies[i][4]+"' width='75em' height='150em' /></td><td><a href='viewmovie.html?id="+movies[i][0]+"'>"+movies[i][1]+"</a></td><td>Movie</td><td>"+ellpsis(movies[i][2])+"</td></tr>");
+								}				
+
+for(var i = 0; i < games.length; i++) {
+x++;
+	$("#bklst").append("<tr><td><a href='viewgame.html?id="+games[i][0]+"'>"+x+"</a></td><td><img src='"+games[i][4]+"' width='75em' height='150em' /></td><td><a href='viewgame.html?id="+games[i][0]+"'>"+games[i][1]+"</a></td><td>Game</td><td>"+ellpsis(games[i][2])+"</td></tr>");
+								}								
+								
+							var table =	$('#obk').DataTable();
 								var x = document.getElementById("obk").getElementsByTagName("td");
 								for(var i = 0; i < x.length; i++) {
     x[i].style.backgroundColor = "black"; 

@@ -48,13 +48,23 @@
 
     <header class="header header-opaque">
         <!--    START: Navbar    -->
-        <nav class="navbar navbar-top navbar-sticky navbar-transparent navbar-autohide">
+        <nav class="navbar navbar-top navbar-sticky navbar-transparent">
             <div class="container">
                 <div class="nav-table">
 
                     <a href="index.html" class="nav-logo">
                         <img src="assets/images/logo.png" alt="" width="90">
                     </a>
+					<ul class="nav nav-right" data-nav-mobile="#nav-mobile">
+                        <li>
+                            <a href="index.html">
+                Home</a>
+                        </li>
+						<li>
+                            <a href="login.html">
+                Login</a>
+                        </li>
+						</ul>
                 </div>
             </div>
         </nav>
@@ -77,11 +87,11 @@
                             <h1 class="title display-3">Black Box</h1>
 
                             <div class="gap-2"></div>
-                            <a href="login.html" class="btn btn-lg btn-color-main-1 lieffect-4">
+                            <a href="login.html" class="btn btn-lg lieffect-4">
                                 <span>Account</span>
                             </a>
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#aboutt" class="btn btn-lg lieffect-4">
+                            <a href="#aboutt" class="btn btn-lg lieffect-4 btn-color-main-1 ">
                                 <span>About Us</span>
                             </a>
 
@@ -132,7 +142,7 @@
                 <h2 class="title h1" id="aboutt">About Black Box</h2>
                 <div class="gap-3"></div>
 
-		    <p class="lead">Black Box is a multi-disciplinary online library that provides the customer with a multitude of options. This includes reading books of various formats from autobiographies to works of fiction, and watching collections of movies from famous documentaries  to the latest thrillers. We are now working on a system that would offer the user a sound gaming experience by extending numerous choices of games. The system is designed to eventually let the user rent the resources for a time period.</p>
+                <p class="lead">Black Box is a multi-disciplinary online library that provides the customer with a multitude of options. This includes reading books of various formats from autobiographies to works of fiction, and watching collections of movies from famous documentaries  to the latest thrillers. We also offer the user a sound gaming experience by extending numerous choices of games.</p>
 
                 <div class="gap-2"></div>
                 <div class="row equal-height no-gap multi-columns-row">
@@ -162,7 +172,7 @@
                         <div class="box-2 box-line">
                             <!-- START: Counter -->
                             <div class="counter-3">
-                                <div class="count">...</div>
+                                <div class="count">10</div>
                                 <h3 class="counter-title h4">Games</h3>
                                 <div class="gap-1"></div>
                             </div>
@@ -182,12 +192,10 @@
             <div class="gap-2"></div>
             <div class="bg-image op-3" style="background-image: url('assets/images/image-3.jpg');"></div>
             <div class="container">
-                <h2 class="display-4">Games ..... Coming Soon</h2>
+                <h2 class="display-4">Virtual Reality ..... Coming Soon</h2>
                 <div class="gap"></div>
-                <div>Get ready for your ultimate gaming library...</div>
+                <div>Get ready for your best VR library...</div>
                 <div class="gap-4"></div>
-
-                <div class="countdown" data-end="2019-04-04 11:59" data-timezone="EST"></div>
             </div>
             <div class="gap-2"></div>
             <div class="gap-6"></div>
@@ -298,6 +306,7 @@
                 }
             });
         }
+		
     });
 
 

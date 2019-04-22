@@ -39,15 +39,26 @@
     </div>
     <!-- END: Page Border -->
 
-    <header class="header header-opaque">
+  <header class="header header-opaque">
         <!--    START: Navbar    -->
-        <nav class="navbar navbar-top navbar-sticky navbar-transparent navbar-autohide">
+        <nav class="navbar navbar-top navbar-sticky navbar-transparent">
             <div class="container">
                 <div class="nav-table">
 
                     <a href="index.html" class="nav-logo">
                         <img src="assets/images/logo.png" alt="" width="90">
                     </a>
+					<ul class="nav nav-right" data-nav-mobile="#nav-mobile">
+                        <li>
+                            <a href="profile.html">Profile</a>
+                        </li>
+						<li>
+                            <a href="search.html">Search</a>
+                        </li>
+						<li>
+                            <a href="#" onclick="logout()">Logout</a>
+                        </li>
+						</ul>
                 </div>
             </div>
         </nav>
@@ -66,8 +77,6 @@
 
                 <h1 class="title">Account</h1>
 
-
-
                 <div class="gap-4"></div>
             </div>
         </div>
@@ -82,7 +91,9 @@
                         <div class="account-links">
                             <ul>
                                 <li class="active"><a href="#">Dashboard</a></li>
-								<li><a href="books.html">View Books</a></li><li><a href="movies.html">View Movies</a></li>
+								<li><a href="search.html">Search All</a></li>								<li><a href="books.html">View Books</a></li>
+								<li><a href="movies.html">View Movies</a></li>
+								<li><a href="games.html">View Games</a></li>
                                 <li><a href="#" data-toggle="tooltip" title="Can't Do It In JS Version">Borrowed Items</a></li>
                                 <li><a href="#" onclick="logout()">Logout</a></li>
                             </ul>
@@ -93,6 +104,28 @@
                 <div class="col-lg-9">
                     <div class="box-3 bg-dark-1">
                         <h2 class="title" id="wbu">Welcome Back</h2>
+				<div class="gap-1"></div>		
+<h5 class="title">Check these out:</h5>
+                <div class="row equal-height no-gap multi-columns-row">
+                    <div class="col-md-4">
+                        <div class="box-2 box-line">
+                                <h3 class="counter-title h4" id="bkname">Books</h3>
+                                <div class="gap-1"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="box-2 box-line">
+                                <h3 class="counter-title h4" id="movname">Movie Titles</h3>
+                                <div class="gap-1"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="box-2 box-line">
+                                <h3 class="counter-title h4" id="gmname">Games</h3>
+                                <div class="gap-1"></div>
+                        </div>
+                    </div>
+                </div>
                         <div class="gap-1"></div>
                     </div>
                 </div>
@@ -138,6 +171,7 @@
 	
     <!-- END: Scripts -->
 <script  src="assets/js/script.js"></script>
+<script  src="db.js"></script>
 	<script>
 	function logout() {
 	createCookie("logged","",-3);
@@ -150,7 +184,15 @@
 			</script>
 <script>
 $(document).ready(function(){
-  $('[data-toggle="tooltip"]').tooltip(); 
+  $('[data-toggle="tooltip"]').tooltip();
+  var rand=Math.floor((Math.random() * 25) + 1);
+document.getElementById("bkname").innerHTML="<a href='viewbook.html?id="+books[rand][0]+"'><img src='"+books[rand][4]+"' width='75em' height='150em' /><p><b>"+books[rand][1]+"</b></a>";  
+
+rand=Math.floor((Math.random() * 25) + 1);
+document.getElementById("movname").innerHTML="<a href='viewmovie.html?id="+movies[rand][0]+"'><img src='"+movies[rand][4]+"' width='75em' height='150em' /><p><b>"+movies[rand][1]+"</b></a>";
+
+rand=Math.floor((Math.random() * 10) + 1);
+document.getElementById("gmname").innerHTML="<a href='viewgame.html?id="+games[rand][0]+"'><img src='"+games[rand][4]+"' width='75em' height='150em' /><p><b>"+games[rand][1]+"</b></a>";
 });
 </script>
 </body>
