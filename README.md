@@ -1,7 +1,7 @@
 # Black Box
 Library System for Ctrl+Shift Competition
 
-Black Box is a multi-disciplinary online library that provides the customer with a multitude of options. This includes reading books of various formats from autobiographies to works of fiction, and watching collections of movies from famous documentaries  to the latest thrillers. We are now working on a system that would offer the user a sound gaming experience by extending numerous choices of games. The system is designed to eventually let the user rent the resources for a time period.
+Black Box is a multi-disciplinary online library that provides the customer with a multitude of options. This includes reading books of various formats from autobiographies to works of fiction, and watching collections of movies from famous documentaries  to the latest thrillers. We are also provide a system that would offer the user a sound gaming experience by extending numerous choices of games. The system is intended for the user to rent the resources for a time period.
 
 # Demo Login (Can be found and edited in db.js)
 -Username: user1
