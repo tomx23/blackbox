@@ -234,10 +234,6 @@
     white-space: nowrap;
 }.navbar .nav-icons > * {
     white-space: initial;
-}@media (max-width: 420px) {
-    .navbar.navbar-top .nav-logo {
-        display: none;
-    }
 }.navbar a {
     font-family: "Marcellus SC", serif;
     color: inherit;
@@ -393,11 +389,7 @@
     display: block;
     padding: 8px 20px;
     padding-right: 50px;
-}@media (max-width: 767px) {
-    .navbar .nav .mega-item > .dropdown {
-        left: 0;
-        right: 0;
-    }
+}
     .navbar .nav .mega-item > .dropdown > ul {
         display: block;
         -ms-flex-flow: row nowrap;

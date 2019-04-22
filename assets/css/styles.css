@@ -95,12 +95,6 @@ a:hover {
     position: absolute;
     right: 5px;
     top: 0;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    user-drag: none;
-    pointer-events: none;
 }.navbar li > a .icon-toggle{
     right: -3px;
 }.scroll-top {
